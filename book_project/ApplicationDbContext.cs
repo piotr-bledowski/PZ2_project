@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using BookReviewPlatform.Models;
 
-namespace BookReviewPlatform.Data
+namespace book_project.Data
 {
     public class ApplicationDbContext : DbContext
     {
