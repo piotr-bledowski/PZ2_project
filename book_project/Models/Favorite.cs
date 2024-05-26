@@ -1,4 +1,4 @@
-namespace BookReviewPlatform.Models
+namespace book_project.Models
 {
     public class Favourite
     {
