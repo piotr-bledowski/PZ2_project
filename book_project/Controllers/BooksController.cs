@@ -5,18 +5,23 @@ using book_project.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace book_project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class BooksController : Controller
     {
         private readonly ApplicationDbContext _context;
 
         public BooksController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        public IActionResult Books() {
+            return View();
         }
 
         [HttpGet]

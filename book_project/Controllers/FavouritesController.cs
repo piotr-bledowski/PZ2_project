@@ -19,7 +19,7 @@ namespace book_project.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet]GCNotificationStatus
         public async Task<ActionResult<IEnumerable<Favourite>>> GetFavourites()
         {
             return await _context.Favourites
@@ -68,6 +68,4 @@ namespace book_project.Controllers
             return NoContent();
         }
     }
-}
-
 }
