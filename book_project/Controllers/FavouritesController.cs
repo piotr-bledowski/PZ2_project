@@ -28,12 +28,14 @@ namespace book_project.Controllers
                 .ToListAsync();
         }
 
-        [HttpGet("{userId}/{bookId}")]
-        public async Task<ActionResult<Favourite>> GetFavourite(int userId, int bookId)
-        {
-            var favourite = await _context.Favourites
-                .Include(f => f.User)
-                .Include(f => f.Book)
-                .FirstOrDefaultAsync(f => f.UserId == userId && f.BookId == bookId);
+        // [HttpGet("{userId}/{bookId}")]
+        // public async Task<ActionResult<Favourite>> GetFavourite(int userId, int bookId)
+        // {
+        //     var favourite = await _context.Favourites
+        //         .Include(f => f.User)
+        //         .Include(f => f.Book)
+        //         .FirstOrDefaultAsync(f => f.UserId == userId && f.BookId == bookId);
 
-            if (
+        //     if (
+    }
+}
