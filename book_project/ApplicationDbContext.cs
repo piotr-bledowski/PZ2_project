@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using BookReviewPlatform.Models;
+using book_project.Models;
 
 namespace book_project.Data
 {
