@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BookReviewPlatform.Models
+namespace book_project.Models
 {
     public class User
     {
