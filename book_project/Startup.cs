@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BookReviewPlatform.Data;
+using book_project.Data;
 
-namespace BookReviewPlatform
+namespace book_project
 {
     public class Startup
     {
