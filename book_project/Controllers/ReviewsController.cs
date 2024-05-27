@@ -8,98 +8,104 @@ using System.Threading.Tasks;
 
 namespace book_project.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/{book_id:int}")]
     [ApiController]
     public class ReviewsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        //private readonly ApplicationDbContext _context;
 
-        public ReviewsController(ApplicationDbContext context)
+        public ReviewsController()
         {
-            _context = context;
+            //_context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Review>>> GetReviews()
-        {
-            return await _context.Reviews
-                .Include(r => r.User)
-                .Include(r => r.Book)
-                .ToListAsync();
+        public IActionResult Reviews(int book_id) {
+            ViewData["book_id"] = book_id;
+            
+            return View();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Review>> GetReview(int id)
-        {
-            var review = await _context.Reviews
-                .Include(r => r.User)
-                .Include(r => r.Book)
-                .FirstOrDefaultAsync(r => r.ReviewId == id);
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<Review>>> GetReviews()
+        // {
+        //     return await _context.Reviews
+        //         .Include(r => r.User)
+        //         .Include(r => r.Book)
+        //         .ToListAsync();
+        // }
 
-            if (review == null)
-            {
-                return NotFound();
-            }
+        // [HttpGet("{id}")]
+        // public async Task<ActionResult<Review>> GetReview(int id)
+        // {
+        //     var review = await _context.Reviews
+        //         .Include(r => r.User)
+        //         .Include(r => r.Book)
+        //         .FirstOrDefaultAsync(r => r.ReviewId == id);
 
-            return review;
-        }
+        //     if (review == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-        [HttpPost]
-        public async Task<ActionResult<Review>> PostReview(Review review)
-        {
-            _context.Reviews.Add(review);
-            await _context.SaveChangesAsync();
+        //     return review;
+        // }
 
-            return CreatedAtAction("GetReview", new { id = review.ReviewId }, review);
-        }
+        // [HttpPost]
+        // public async Task<ActionResult<Review>> PostReview(Review review)
+        // {
+        //     _context.Reviews.Add(review);
+        //     await _context.SaveChangesAsync();
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutReview(int id, Review review)
-        {
-            if (id != review.ReviewId)
-            {
-                return BadRequest();
-            }
+        //     return CreatedAtAction("GetReview", new { id = review.ReviewId }, review);
+        // }
 
-            _context.Entry(review).State = EntityState.Modified;
+        // [HttpPut("{id}")]
+        // public async Task<IActionResult> PutReview(int id, Review review)
+        // {
+        //     if (id != review.ReviewId)
+        //     {
+        //         return BadRequest();
+        //     }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ReviewExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //     _context.Entry(review).State = EntityState.Modified;
 
-            return NoContent();
-        }
+        //     try
+        //     {
+        //         await _context.SaveChangesAsync();
+        //     }
+        //     catch (DbUpdateConcurrencyException)
+        //     {
+        //         if (!ReviewExists(id))
+        //         {
+        //             return NotFound();
+        //         }
+        //         else
+        //         {
+        //             throw;
+        //         }
+        //     }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteReview(int id)
-        {
-            var review = await _context.Reviews.FindAsync(id);
-            if (review == null)
-            {
-                return NotFound();
-            }
+        //     return NoContent();
+        // }
 
-            _context.Reviews.Remove(review);
-            await _context.SaveChangesAsync();
+        // [HttpDelete("{id}")]
+        // public async Task<IActionResult> DeleteReview(int id)
+        // {
+        //     var review = await _context.Reviews.FindAsync(id);
+        //     if (review == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-            return NoContent();
-        }
+        //     _context.Reviews.Remove(review);
+        //     await _context.SaveChangesAsync();
 
-        private bool ReviewExists(int id)
-        {
-            return _context.Reviews.Any(e => e.ReviewId == id);
-        }
+        //     return NoContent();
+        // }
+
+        // private bool ReviewExists(int id)
+        // {
+        //     return _context.Reviews.Any(e => e.ReviewId == id);
+        // }
     }
 }
