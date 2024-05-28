@@ -60,3 +60,12 @@
 /home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/runtimes/win-x64/native/e_sqlite3.dll
 /home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
 /home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/obj/Debug/net8.0/book_project.csproj.CopyComplete
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.UI.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/obj/Debug/net8.0/book_project.MvcApplicationPartsAssemblyInfo.cs

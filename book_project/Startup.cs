@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using book_project.Data;
+using Microsoft.AspNetCore.Identity;
+using book_project.Models;
 
 namespace book_project
 {
@@ -24,6 +26,8 @@ namespace book_project
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDefaultIdentity<User>(options => options.Password.RequireDigit = false).AddEntityFrameworkStores<ApplicationDbContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -42,6 +46,7 @@ namespace book_project
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

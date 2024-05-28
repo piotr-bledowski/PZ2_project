@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace book_project.Models
 {
-    public class User
+    public class User  : IdentityUser
     {
         public int UserId { get; set; }
 
