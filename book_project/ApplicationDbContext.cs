@@ -24,6 +24,8 @@ namespace book_project.Data
 
             modelBuilder.Entity<Favourite>()
                 .HasKey(f => new { f.UserId, f.BookId });
+            
+            modelBuilder.Entity<Author>().HasData(new Author {AuthorId = 1, Name = "Philip K. Dick"});
 
             // modelBuilder.Entity<Favourite>()
             //     .HasOne(f => f.User)
