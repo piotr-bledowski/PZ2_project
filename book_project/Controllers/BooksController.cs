@@ -20,10 +20,6 @@ namespace book_project.Controllers
             _context = context;
         }
 
-        public IActionResult Books() {
-            return View();
-        }
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {

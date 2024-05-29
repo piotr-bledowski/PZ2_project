@@ -18,8 +18,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Books/Books.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va3MvQm9va3MuY3NodG1s
+[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Home/Books.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Cb29rcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Home/Index.cshtml]
