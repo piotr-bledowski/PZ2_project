@@ -32,6 +32,7 @@ namespace book_project.Data
             modelBuilder.Entity<Review>().HasData(new Review {ReviewId = 1, Rating = 5, Analysis = "My favorite book of all time, a remarkable thought-provoking ending", BookId=1, UserId=1});
             modelBuilder.Entity<Author>().HasData(new Author {AuthorId = 2, Name = "Douglas Adams"});
             modelBuilder.Entity<Book>().HasData(new Book {BookId=3, Title="Hitchhiker's Guide To The Galaxy", Genre="Science Fiction", AuthorId=2});
+            
 
             // modelBuilder.Entity<Favourite>()
             //     .HasOne(f => f.User)

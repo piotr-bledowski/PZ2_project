@@ -87,17 +87,17 @@ public class HomeController : Controller
 
     [Route("reviews/{book_id:int}")]
     public IActionResult Reviews(int book_id) {
-            var reviews = _context.Reviews.Where(r => r.BookId == book_id).ToList();
-
-            var title = _context.Books.Where(b => b.BookId == reviews[0].BookId).ToList()[0].Title;
-            var author_id = _context.Books.Where(b => b.BookId == reviews[0].BookId).ToList()[0].AuthorId;
-
-            ViewData["book_title"] = title;
-            ViewData["book_id"] = book_id;
+            var reviews = _context.Reviews.Where(r => r.BookId == book_id).ToList();            
 
             bool favorite = _context.Favourites.Any(x => x.BookId == book_id && x.UserId == 1);
 
             ViewData["favorite"] = favorite;
+            
+            var title = _context.Books.Where(b => b.BookId == book_id).ToList()[0].Title;
+            var author_id = _context.Books.Where(b => b.BookId == book_id).ToList()[0].AuthorId;
+
+            ViewData["book_title"] = title;
+            ViewData["book_id"] = book_id;
 
             var author = _context.Authors.Where(a => a.AuthorId == author_id).ToList()[0].Name;
 
