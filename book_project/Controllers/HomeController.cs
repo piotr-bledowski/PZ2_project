@@ -44,17 +44,10 @@ public class HomeController : Controller
     [Route("AddReview/{book_id:int}")]
     public IActionResult AddReview(Review review)
     {
-        Console.WriteLine("YOOOOOOOOOOOOOOO");
-        Console.WriteLine(review.Analysis);
-        Console.WriteLine(review.Rating);
-        Console.WriteLine(review.ReviewId);
-        Console.WriteLine(review.UserId);
-        Console.WriteLine(review.BookId);
-
         _context.Add(review);
         _context.SaveChanges();
 
-        return Redirect("reviews/" + review.BookId.ToString());
+        return Redirect("http://localhost:5210/reviews/" + review.BookId.ToString());
     }
 
     //[Authorize]
@@ -65,6 +58,26 @@ public class HomeController : Controller
         return View(books);
     }
 
+    [Route("addToFavorites/{book_id:int}")]
+    public IActionResult AddToFavorites(int book_id) {
+        var favourite = new Favourite {UserId = 1, BookId = book_id};
+
+        _context.Favourites.Add(favourite);
+        _context.SaveChanges();
+
+        return Redirect("http://localhost:5210/reviews/" + favourite.BookId.ToString());
+    }
+
+    [Route("removeFromFavorites/{book_id:int}")]
+    public IActionResult RemoveFromFavorites(int book_id) {
+        var favourite = new Favourite {UserId = 1, BookId = book_id};
+
+        _context.Favourites.Remove(favourite);
+        _context.SaveChanges();
+
+        return Redirect("http://localhost:5210/reviews/" + favourite.BookId.ToString());
+    }
+
     [Route("reviews/{book_id:int}")]
     public IActionResult Reviews(int book_id) {
             var reviews = _context.Reviews.Where(r => r.BookId == book_id).ToList();
@@ -73,6 +86,10 @@ public class HomeController : Controller
 
             ViewData["book_title"] = title;
             ViewData["book_id"] = book_id;
+
+            bool favorite = _context.Favourites.Any(x => x.BookId == book_id && x.UserId == 1);
+
+            ViewData["favorite"] = favorite;
             
             return View(reviews);
         }
