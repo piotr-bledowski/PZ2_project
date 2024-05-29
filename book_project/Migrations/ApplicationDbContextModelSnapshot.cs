@@ -213,14 +213,14 @@ namespace book_project.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d3661a9a-12bd-492b-ae85-a6a0a80c1a1a",
+                            Id = "ff5be1b8-1582-48bd-bfa7-13dc0c0eb708",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bf41210f-b587-4e83-97b9-1d9c069365ee",
+                            ConcurrencyStamp = "69af4f0f-99bb-4e89-88ec-75fb190eccaa",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "1234qwer",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9c7bcfcb-b265-4526-b948-c8fa8b76574c",
+                            SecurityStamp = "2311065e-7d7a-4e02-854f-9efaf032695c",
                             Token = "1234qwer",
                             TwoFactorEnabled = false,
                             UserId = 1,
@@ -242,7 +242,7 @@ namespace book_project.Migrations
             modelBuilder.Entity("book_project.Models.Favourite", b =>
                 {
                     b.HasOne("book_project.Models.Book", "Book")
-                        .WithMany("Favourites")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -259,7 +259,7 @@ namespace book_project.Migrations
             modelBuilder.Entity("book_project.Models.Review", b =>
                 {
                     b.HasOne("book_project.Models.Book", "Book")
-                        .WithMany("Reviews")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -271,13 +271,6 @@ namespace book_project.Migrations
                     b.Navigation("Book");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("book_project.Models.Book", b =>
-                {
-                    b.Navigation("Favourites");
-
-                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

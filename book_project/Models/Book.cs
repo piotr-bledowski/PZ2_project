@@ -14,7 +14,7 @@ namespace book_project.Models
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
-        public ICollection<Review> Reviews { get; set; }
-        public ICollection<Favourite> Favourites { get; set; }
+        // public ICollection<Review> Reviews { get; set; }
+        // public ICollection<Favourite> Favourites { get; set; }
     }
 }

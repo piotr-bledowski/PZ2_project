@@ -1,12 +1,8 @@
 # PZ2_project
 Final project for .NET course at AGH UST
 
-Requirements:
-- ASP .NET CORE MVC framework
-- at least 4 database tables
-- account / authentication system with an extra DB table for users
-- REST API
-- some extra functionality so that it is more than basic CRUD
+The application allows users to review books available in the library.
+Furthermore users can keep a favorites list based on which they will get recommendations on the homepage.
 
-General notes:
-- the project requires Microsoft.EntityFrameworkCore (dotnet add package Microsoft.EntityFrameworkCore)
+The recommendations are books of user's favorite authors that they don't have on their favorites list yet.
+
