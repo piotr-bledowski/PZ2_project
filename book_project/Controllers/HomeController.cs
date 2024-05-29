@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using book_project.Models;
 using book_project.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace book_project.Controllers;
 
@@ -26,6 +27,7 @@ public class HomeController : Controller
         return View();
     }
 
+    [Authorize]
     [Route("books")]
     public IActionResult Books() {
         var books = _context.Books.ToList();
