@@ -41,6 +41,11 @@ namespace book_project.Migrations
                         {
                             AuthorId = 2,
                             Name = "Douglas Adams"
+                        },
+                        new
+                        {
+                            AuthorId = 3,
+                            Name = "J.R.R. Tolkien"
                         });
                 });
 
@@ -88,6 +93,27 @@ namespace book_project.Migrations
                             AuthorId = 2,
                             Genre = "Science Fiction",
                             Title = "Hitchhiker's Guide To The Galaxy"
+                        },
+                        new
+                        {
+                            BookId = 4,
+                            AuthorId = 3,
+                            Genre = "Fantasy",
+                            Title = "The Hobbit"
+                        },
+                        new
+                        {
+                            BookId = 5,
+                            AuthorId = 3,
+                            Genre = "Fantasy",
+                            Title = "The Lord of the Rings"
+                        },
+                        new
+                        {
+                            BookId = 6,
+                            AuthorId = 3,
+                            Genre = "Fantasy",
+                            Title = "Silmarillion"
                         });
                 });
 
@@ -213,14 +239,14 @@ namespace book_project.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ff5be1b8-1582-48bd-bfa7-13dc0c0eb708",
+                            Id = "8cc03974-59cf-4946-8447-8b7525c387c4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "69af4f0f-99bb-4e89-88ec-75fb190eccaa",
+                            ConcurrencyStamp = "d21cf558-7819-445e-978d-30a4ca063dd5",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "1234qwer",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2311065e-7d7a-4e02-854f-9efaf032695c",
+                            SecurityStamp = "0a52283f-6328-4751-b89f-848da3b81cc6",
                             Token = "1234qwer",
                             TwoFactorEnabled = false,
                             UserId = 1,

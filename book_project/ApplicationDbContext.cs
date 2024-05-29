@@ -32,6 +32,10 @@ namespace book_project.Data
             modelBuilder.Entity<Review>().HasData(new Review {ReviewId = 1, Rating = 5, Analysis = "My favorite book of all time, a remarkable thought-provoking ending", BookId=1, UserId=1});
             modelBuilder.Entity<Author>().HasData(new Author {AuthorId = 2, Name = "Douglas Adams"});
             modelBuilder.Entity<Book>().HasData(new Book {BookId=3, Title="Hitchhiker's Guide To The Galaxy", Genre="Science Fiction", AuthorId=2});
+            modelBuilder.Entity<Author>().HasData(new Author {AuthorId = 3, Name = "J.R.R. Tolkien"});
+            modelBuilder.Entity<Book>().HasData(new Book {BookId=4, Title="The Hobbit", Genre="Fantasy", AuthorId=3});
+            modelBuilder.Entity<Book>().HasData(new Book {BookId=5, Title="The Lord of the Rings", Genre="Fantasy", AuthorId=3});
+            modelBuilder.Entity<Book>().HasData(new Book {BookId=6, Title="Silmarillion", Genre="Fantasy", AuthorId=3});
             
 
             // modelBuilder.Entity<Favourite>()
