@@ -4,6 +4,7 @@ using book_project.Models;
 using book_project.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace book_project.Controllers;
 
@@ -85,6 +86,15 @@ public class HomeController : Controller
         return Redirect("http://localhost:5210/reviews/" + favourite.BookId.ToString());
     }
 
+    [Route("DeleteReview/{review_id:int}")]
+    public IActionResult DeleteReview(int review_id) {
+        var book_id = _context.Reviews.Where(r => r.ReviewId == review_id).ToList()[0].BookId;
+        _context.Reviews.Where(r => r.ReviewId == review_id).ExecuteDelete();
+        _context.SaveChanges();
+
+        return Redirect("http://localhost:5210/reviews/" + book_id.ToString());
+    }
+
     [Route("reviews/{book_id:int}")]
     public IActionResult Reviews(int book_id) {
             var reviews = _context.Reviews.Where(r => r.BookId == book_id).ToList();            
@@ -92,7 +102,7 @@ public class HomeController : Controller
             bool favorite = _context.Favourites.Any(x => x.BookId == book_id && x.UserId == 1);
 
             ViewData["favorite"] = favorite;
-            
+
             var title = _context.Books.Where(b => b.BookId == book_id).ToList()[0].Title;
             var author_id = _context.Books.Where(b => b.BookId == book_id).ToList()[0].AuthorId;
 
