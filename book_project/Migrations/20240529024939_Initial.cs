@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace book_project.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,6 +32,7 @@ namespace book_project.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Token = table.Column<string>(type: "TEXT", nullable: false),
                     UserName = table.Column<string>(type: "TEXT", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "TEXT", nullable: true),
                     Email = table.Column<string>(type: "TEXT", nullable: true),
@@ -131,6 +132,11 @@ namespace book_project.Migrations
                 values: new object[] { 1, "Philip K. Dick" });
 
             migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Token", "TwoFactorEnabled", "UserId", "UserName" },
+                values: new object[] { "7c11587f-00e4-4c34-99ca-ab25f8142171", 0, "0e751ddb-7aff-438b-b901-922080da8a3d", null, false, false, null, null, null, "1234qwer", null, false, "6e793790-5290-427e-9ac5-631fce68e28d", "1234qwer", false, 1, "admin" });
+
+            migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "BookId", "AuthorId", "Genre", "Title" },
                 values: new object[,]
@@ -138,6 +144,11 @@ namespace book_project.Migrations
                     { 1, 1, "Science Fiction", "Do Androids Dream of Electric Sheep" },
                     { 2, 1, "Alternative History", "The Man In The High Castle" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Reviews",
+                columns: new[] { "ReviewId", "Analysis", "BookId", "Rating", "UserId", "UserId1" },
+                values: new object[] { 1, "My favorite book of all time, a remarkable thought-provoking ending", 1, 5, 1, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",

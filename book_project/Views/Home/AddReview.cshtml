@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Add Review";
+}
+
+@model book_project.Models.Review
+
+<div class="text-center">
+    <h1 class="display-4">Add a review for book "@ViewData["book_title"]"</h1>
+
+    <form method="post" asp-action="AddReview">
+        <label for="analysis">Analysis</label>
+        <input type="text" asp-for="Analysis" name="analysis" id="analysis" />
+        <label for="rating">Rating</label>
+        <select asp-for="Rating" name="rating" id="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <input type="hidden" asp-for="BookId" name="BookId" value=@ViewData["book_id"] />
+        <input type="hidden" asp-for="UserId" name="UserId" value=1 />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

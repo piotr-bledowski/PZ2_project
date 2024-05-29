@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Reviews";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Reviews for book "@ViewData["book_title"]"</h1>
+    <h2><a href="http://localhost:5210/AddReview/@ViewData["book_id"]" >Add Review</a></h2>
+</div>
+
+@model List<book_project.Models.Review>
+
+@if (!Model.Any())
+{
+    <p>No reviews found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rating</th>
+                <th>Analysis</th> </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model)
+            {
+                <tr>
+                    <td>@review.Rating</td>
+                    <td>@review.Analysis</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

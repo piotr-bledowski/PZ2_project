@@ -28,6 +28,8 @@ namespace book_project.Data
             modelBuilder.Entity<Author>().HasData(new Author {AuthorId = 1, Name = "Philip K. Dick"});
             modelBuilder.Entity<Book>().HasData(new Book {BookId = 1, Title = "Do Androids Dream of Electric Sheep", Genre = "Science Fiction", AuthorId = 1});
             modelBuilder.Entity<Book>().HasData(new Book {BookId = 2, Title = "The Man In The High Castle", Genre = "Alternative History", AuthorId = 1});
+            modelBuilder.Entity<User>().HasData(new User {UserId = 1, UserName = "admin", PasswordHash = "1234qwer", Token = "1234qwer"});
+            modelBuilder.Entity<Review>().HasData(new Review {ReviewId = 1, Rating = 5, Analysis = "My favorite book of all time, a remarkable thought-provoking ending", BookId=1, UserId=1});
 
             // modelBuilder.Entity<Favourite>()
             //     .HasOne(f => f.User)

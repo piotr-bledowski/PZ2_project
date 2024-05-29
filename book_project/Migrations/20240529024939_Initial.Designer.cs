@@ -11,8 +11,8 @@ using book_project.Data;
 namespace book_project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240529001858_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20240529024939_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -131,6 +131,16 @@ namespace book_project.Migrations
                     b.HasIndex("UserId1");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            ReviewId = 1,
+                            Analysis = "My favorite book of all time, a remarkable thought-provoking ending",
+                            BookId = 1,
+                            Rating = 5,
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("book_project.Models.User", b =>
@@ -174,6 +184,10 @@ namespace book_project.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("INTEGER");
 
@@ -186,6 +200,23 @@ namespace book_project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "7c11587f-00e4-4c34-99ca-ab25f8142171",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0e751ddb-7aff-438b-b901-922080da8a3d",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "1234qwer",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6e793790-5290-427e-9ac5-631fce68e28d",
+                            Token = "1234qwer",
+                            TwoFactorEnabled = false,
+                            UserId = 1,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("book_project.Models.Book", b =>

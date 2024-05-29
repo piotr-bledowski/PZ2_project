@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Home/AddReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZGRSZXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Home/Books.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Cb29rcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,16 +42,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmVnaXN0ZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Reviews/Reviews.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUmV2aWV3cy9SZXZpZXdzLmNzaHRtbA==
+[/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Home/Reviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXZpZXdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/piotr/Desktop/PZ2/lab11/PZ2_project/book_project/Views/Shared/Error.cshtml]

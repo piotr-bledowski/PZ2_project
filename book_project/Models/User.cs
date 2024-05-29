@@ -14,7 +14,7 @@ namespace book_project.Models
         
         // public string PasswordHash { get; set; }
 
-        // public string Token { get; set; }
+        public string Token { get; set; }
 
         // public ICollection<Review> Reviews { get; set; }
         // public ICollection<Favourite> Favourites { get; set; }
