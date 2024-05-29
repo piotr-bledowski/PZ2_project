@@ -13,35 +13,35 @@ namespace book_project.Controllers
     [ApiController]
     public class BooksController : Controller
     {
-        //private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public BooksController()
+        public BooksController(ApplicationDbContext context)
         {
-            //_context = context;
+            _context = context;
         }
 
         public IActionResult Books() {
             return View();
         }
 
-        // [HttpGet]
-        // public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
-        // {
-        //     return await _context.Books.Include(b => b.Author).ToListAsync();
-        // }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+        {
+            return await _context.Books.Include(b => b.Author).ToListAsync();
+        }
 
-        // [HttpGet("{id}")]
-        // public async Task<ActionResult<Book>> GetBook(int id)
-        // {
-        //     var book = await _context.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.BookId == id);
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Book>> GetBook(int id)
+        {
+            var book = await _context.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.BookId == id);
 
-        //     if (book == null)
-        //     {
-        //         return NotFound();
-        //     }
+            if (book == null)
+            {
+                return NotFound();
+            }
 
-        //     return book;
-        // }
+            return book;
+        }
 
         // [HttpPost]
         // public async Task<ActionResult<Book>> PostBook(Book book)

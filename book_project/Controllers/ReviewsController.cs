@@ -12,11 +12,11 @@ namespace book_project.Controllers
     [ApiController]
     public class ReviewsController : Controller
     {
-        //private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ReviewsController()
+        public ReviewsController(ApplicationDbContext context)
         {
-            //_context = context;
+            _context = context;
         }
 
         public IActionResult Reviews(int book_id) {
