@@ -3,7 +3,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Reviews for book "@ViewData["book_title"]"</h1>
+    <h1 class="display-4">Reviews for book "@ViewData["book_title"]" by @ViewData["author"]</h1>
     <h2><a href="http://localhost:5210/AddReview/@ViewData["book_id"]" >Add Review</a></h2>
     @if ((bool) ViewData["favorite"]) {
         <h2><a href="http://localhost:5210/RemoveFromFavorites/@ViewData["book_id"]" >Remove To Favorites</a></h2>

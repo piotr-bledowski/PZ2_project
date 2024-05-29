@@ -36,6 +36,11 @@ namespace book_project.Migrations
                         {
                             AuthorId = 1,
                             Name = "Philip K. Dick"
+                        },
+                        new
+                        {
+                            AuthorId = 2,
+                            Name = "Douglas Adams"
                         });
                 });
 
@@ -76,6 +81,13 @@ namespace book_project.Migrations
                             AuthorId = 1,
                             Genre = "Alternative History",
                             Title = "The Man In The High Castle"
+                        },
+                        new
+                        {
+                            BookId = 3,
+                            AuthorId = 2,
+                            Genre = "Science Fiction",
+                            Title = "Hitchhiker's Guide To The Galaxy"
                         });
                 });
 
@@ -201,14 +213,14 @@ namespace book_project.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7c11587f-00e4-4c34-99ca-ab25f8142171",
+                            Id = "d3661a9a-12bd-492b-ae85-a6a0a80c1a1a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e751ddb-7aff-438b-b901-922080da8a3d",
+                            ConcurrencyStamp = "bf41210f-b587-4e83-97b9-1d9c069365ee",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "1234qwer",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6e793790-5290-427e-9ac5-631fce68e28d",
+                            SecurityStamp = "9c7bcfcb-b265-4526-b948-c8fa8b76574c",
                             Token = "1234qwer",
                             TwoFactorEnabled = false,
                             UserId = 1,

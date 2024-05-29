@@ -20,7 +20,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var recommended = _context.Books
+        .Where(book => !(_context.Favourites
+            .Any(favourite => favourite.UserId == 1 && favourite.BookId == book.BookId)))
+        .Where(book => _context.Favourites
+            .Any(favourite => favourite.UserId == 1 && favourite.Book.AuthorId == book.AuthorId))
+        .ToList();
+
+        return View(recommended);
     }
 
     public IActionResult Privacy()
@@ -83,6 +90,7 @@ public class HomeController : Controller
             var reviews = _context.Reviews.Where(r => r.BookId == book_id).ToList();
 
             var title = _context.Books.Where(b => b.BookId == reviews[0].BookId).ToList()[0].Title;
+            var author_id = _context.Books.Where(b => b.BookId == reviews[0].BookId).ToList()[0].AuthorId;
 
             ViewData["book_title"] = title;
             ViewData["book_id"] = book_id;
@@ -90,6 +98,10 @@ public class HomeController : Controller
             bool favorite = _context.Favourites.Any(x => x.BookId == book_id && x.UserId == 1);
 
             ViewData["favorite"] = favorite;
+
+            var author = _context.Authors.Where(a => a.AuthorId == author_id).ToList()[0].Name;
+
+            ViewData["author"] = author;
             
             return View(reviews);
         }
